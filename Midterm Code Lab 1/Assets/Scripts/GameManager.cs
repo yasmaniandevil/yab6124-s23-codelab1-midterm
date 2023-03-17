@@ -19,10 +19,10 @@ public class GameManager : MonoBehaviour
     //public TextMeshPro displayText;
 
     //made it UI instead of object because 3D Space, UI has to follow player camera
-    public TextMeshProUGUI counter;
+    public TextMeshProUGUI _counter;
 
     //create a bool set it to true
-    private bool inGame = true;
+    bool inGame = true;
 
     //set int score to 0
     int score = 0;
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
             //make the timer the same speed as time.deltatime
             timer += Time.deltaTime;
             //the text that will display will be the timer: how much longer the game is minus the timer
-            counter.text = "Timer: " + (gameLength - (int)timer);
+            _counter.text = "Timer: " + (gameLength - (int)timer);
         }
 
         //if the timer is greater than or equal to game length and inGame is set to true
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
         if (highScores.Count > 5)
         {
             //cut it to 5 high scores
-            highScores.RemoveRange(5, highScores.Count - 5 );
+            highScores.RemoveRange(5, highScores.Count - 5);
         }
 
         //make a string of all our high scores
@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
         }
 
         //display high scores
-        counter.text = highScoreStr;
+        _counter.text = highScoreStr;
         
         File.WriteAllText(FILE_PATH, highScoreStr);
     }
