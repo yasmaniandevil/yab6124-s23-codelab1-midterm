@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
     //how fast platform moves
-    public float speed = 2;
+    /*public float speed = 2;
 
     //stores inital position pf obj when game starts
     private Vector3 initalPos;
@@ -44,5 +46,8 @@ public class PlatformMovement : MonoBehaviour
         {
             cachedTransform.position = initalPos;
         }
-    }
+    }*/
+
+    
+    
 }
