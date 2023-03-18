@@ -9,6 +9,8 @@ public class CloseLegs : MonoBehaviour
     //variable for the animator
     private Animator _animator;
 
+    private AudioSource _audio;
+
     private bool _triggered = false;
 
     private bool _scoreIncrement = false;
@@ -19,6 +21,7 @@ public class CloseLegs : MonoBehaviour
     {
         //grab the animator component off this object set it to var i created
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
 
     }
     
@@ -48,6 +51,7 @@ public class CloseLegs : MonoBehaviour
             //set to true once score goes up
             //score only goes up when both conditions are true
             _scoreIncrement = true;
+            _audio.Play();
 
         }
     }

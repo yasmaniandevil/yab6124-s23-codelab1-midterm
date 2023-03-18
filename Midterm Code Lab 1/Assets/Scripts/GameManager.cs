@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     //made it UI instead of object because 3D Space, UI has to follow player camera
     public TextMeshProUGUI _counter;
+    public TextMeshProUGUI _scoreText;
 
     //create a bool set it to true
     bool inGame = true;
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             //the text that will display will be the timer: how much longer the game is minus the timer
             _counter.text = "Timer: " + (gameLength - (int)timer);
+            _scoreText.text = "Legs Closed: " + (score);
         }
 
         //if the timer is greater than or equal to game length and inGame is set to true
